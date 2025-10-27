@@ -1,0 +1,53 @@
+/* Simple StudySync Styles */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    border-radius: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    header nav a {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Focus indicators for accessibility */
+.btn:focus, .form-control:focus, .form-select:focus {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+}

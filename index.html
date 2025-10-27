@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Muralidhar Dontineni, Joshua Kingsley, Sahith Sivalanka">
+    <meta name="description" content="StudySync - Interactive flashcard study application">
+    <title>StudySync - Dashboard</title>
+    <link rel="icon" type="image/png" href="img/s_icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-primary text-white p-3">
+        <div class="container">
+            <h1>StudySync</h1>
+            <nav>
+                <a href="index.html" class="text-white me-3">Dashboard</a>
+                <a href="create_deck.html" class="text-white me-3">Create Deck</a>
+                <a href="study_room.html" class="text-white me-3">Study Rooms</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <h2>My Study Decks</h2>
+        
+        <!-- Search Form -->
+        <form class="mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Search decks...">
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select">
+                        <option>All Subjects</option>
+                        <option>Computer Science</option>
+                        <option>Biology</option>
+                        <option>Spanish</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Deck Cards -->
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>JavaScript Fundamentals</h5>
+                        <p>Basic JavaScript concepts and syntax</p>
+                        <img src="img/coding_image.jpg" alt="Coding icon" class="img-fluid mb-2" style="max-height: 100px;">
+                        <p><small>45 cards • Computer Science</small></p>
+                        <a href="flashcard.html" class="btn btn-success">Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Cell Biology</h5>
+                        <p>Cellular structures and processes</p>
+                        <img src="img/cell_pic.jpg" alt="Cell diagram" class="img-fluid mb-2" style="max-height: 100px;">
+                        <p><small>67 cards • Biology</small></p>
+                        <a href="flashcard.html" class="btn btn-success">Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>Spanish Vocabulary</h5>
+                        <p>Common Spanish words and phrases</p>
+                        <img src="img/spain_flag.jpg" alt="Spanish flag" class="img-fluid mb-2" style="max-height: 100px;">
+                        <p><small>123 cards • Language</small></p>
+                        <a href="flashcard.html" class="btn btn-success">Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white p-3 mt-5">
+        <div class="container">
+            <p>&copy; 2025 StudySync. All rights reserved.</p>
+            <p>Contact: support@studysync.edu</p>
+        </div>
+    </footer>
+</body>
+</html>
