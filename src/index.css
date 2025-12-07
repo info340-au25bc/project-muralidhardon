@@ -387,6 +387,13 @@ select:focus-visible {
   }
 }
 
+@media (min-width: 900px) {
+  .study-section {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    align-items: flex-start;
+  }
+}
+
 @media (min-width: 1024px) {
   .deck-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
