@@ -134,22 +134,26 @@ export default function DeckDetailPage({ decks, onAddCard }) {
           Add a new card
         </h3>
         <form onSubmit={handleAddCard} className="card-form">
-          <label>
-            Question
+          <div className="form-field">
+            <label htmlFor="new-card-question">Question</label>
             <textarea
+              id="new-card-question"
               value={questionInput}
               onChange={e => setQuestionInput(e.target.value)}
               required
             />
-          </label>
-          <label>
-            Answer
+          </div>
+
+          <div className="form-field">
+            <label htmlFor="new-card-answer">Answer</label>
             <textarea
+              id="new-card-answer"
               value={answerInput}
               onChange={e => setAnswerInput(e.target.value)}
               required
             />
-          </label>
+          </div>
+
           <button type="submit" className="primary-button">
             Add card
           </button>
