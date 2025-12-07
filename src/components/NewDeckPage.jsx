@@ -50,42 +50,45 @@ export default function NewDeckPage({ onCreateDeck }) {
 
       {error && <p className="error-text">{error}</p>}
 
-      <form onSubmit={handleSubmit} className="card-form">
-        <label>
-          Deck name
-          <input
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            placeholder="e.g., CSE 312 Midterm 2"
-            required
-          />
-        </label>
+<form onSubmit={handleSubmit} className="card-form">
+  <div className="form-field">
+    <label htmlFor="deck-name">Deck name</label>
+    <input
+      id="deck-name"
+      type="text"
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="e.g., CSE 312 Midterm 2"
+      required
+    />
+  </div>
 
-        <label>
-          Course / tag
-          <input
-            type="text"
-            value={course}
-            onChange={e => setCourse(e.target.value)}
-            placeholder="e.g., CSE 312"
-            required
-          />
-        </label>
+  <div className="form-field">
+    <label htmlFor="deck-course">Course / tag</label>
+    <input
+      id="deck-course"
+      type="text"
+      value={course}
+      onChange={e => setCourse(e.target.value)}
+      placeholder="e.g., CSE 312"
+      required
+    />
+  </div>
 
-        <label>
-          Short description
-          <textarea
-            value={description}
-            onChange={e => setDescription(e.target.value)}
-            placeholder="What is this deck for?"
-          />
-        </label>
+  <div className="form-field">
+    <label htmlFor="deck-description">Short description</label>
+    <textarea
+      id="deck-description"
+      value={description}
+      onChange={e => setDescription(e.target.value)}
+      placeholder="What is this deck for?"
+    />
+  </div>
 
-        <button type="submit" className="primary-button">
-          Create deck
-        </button>
-      </form>
+  <button type="submit" className="primary-button">
+    Create deck
+  </button>
+</form>
     </section>
   );
 }
