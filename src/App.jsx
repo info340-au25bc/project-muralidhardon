@@ -1,32 +1,33 @@
 // src/App.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './components/HomePage';
 import DeckListPage from './components/DeckListPage';
 import DeckDetailPage from './components/DeckDetailPage';
 import NewDeckPage from './components/NewDeckPage';
-import { decks as initialDecks } from './data/flashcardsData';
+import { subscribeToDecks, addDeck, addCard } from './firebaseHelpers';
 
 function App() {
-  const [decks, setDecks] = useState(initialDecks);
+  const [decks, setDecks] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    subscribeToDecks((data) => {
+      setDecks(data);
+      setLoading(false);
+    });
+  }, []);
 
   function handleCreateDeck(newDeck) {
-    setDecks(prev => [...prev, newDeck]);
+    addDeck(newDeck).catch(err => console.error("Error adding deck:", err));
   }
 
   function handleAddCard(deckId, newCard) {
-    setDecks(prev =>
-      prev.map(deck =>
-        deck.id === deckId
-          ? {
-              ...deck,
-              cards: [...(deck.cards ?? []), newCard]
-            }
-          : deck
-      )
-    );
+    addCard(deckId, newCard).catch(err => console.error("Error adding card:", err));
   }
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <Layout>
