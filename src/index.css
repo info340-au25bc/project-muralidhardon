@@ -274,6 +274,11 @@ select:focus-visible {
   margin-bottom: 0.1rem;
 }
 
+.deck-card h3:hover {
+  color: var(--accent-strong);
+  cursor: pointer;
+}
+
 .deck-card p {
   font-size: 0.9rem;
   color: var(--text-muted);
